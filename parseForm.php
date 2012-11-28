@@ -29,10 +29,10 @@ try{
     $outputDataStructure = array();
 
     //when mapping to a database
-    $serverAddress = $_POST["DataBaseServerAddress"];
-    $username = $_POST["DataBaseUserName"];
-    $password = $_POST["DataBasePassword"];
-    $databaseName = $_POST["ListOfDatabaseNames"];
+    $serverAddress = isset($_POST["DataBaseServerAddress"]) ? $_POST["DataBaseServerAddress"]: "";
+    $username = isset($_POST["DataBaseUserName"]) ? $_POST["DataBaseUserName"]: "";
+    $password = isset($_POST["DataBasePassword"]) ? $_POST["DataBasePassword"]: "";
+    $databaseName = isset($_POST["ListOfDatabaseNames"]) ? $_POST["ListOfDatabaseNames"]: "";
 
 
 	if($outputType == "ToOutputDataFile"){

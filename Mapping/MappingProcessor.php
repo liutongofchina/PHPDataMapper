@@ -67,9 +67,7 @@ class MappingProcessor{
 
 		$rowCount = count($this->dataFileClass->rows);
 		
-		
-
-		for($j=0; $j<$rowCount; $j++){
+		for($j=0; $j<$rowCount-1; $j++){
 
 			$landingColumnNumber = $mapping->landingColumnNumber;
 			$columnNumber = $mapping->ProcessColumn->columnNumber;
@@ -129,8 +127,8 @@ class MappingProcessor{
 		// 	store the result value in the global data class
 
 		$rowCount = count($this->dataFileClass->rows);
-
-		for($j=0; $j<=$rowCount; $j++)
+         
+		for($j=0; $j<=$rowCount-1; $j++)
 		{
 			$landingColumnNumber = $mapping->landingColumnNumber;
 
@@ -143,6 +141,7 @@ class MappingProcessor{
 			for($k=0; $k<$numProcessColumns; $k++){
 				$newValue = "";
 				$columnNumber = $mapping->ProcessColumns[$k]->columnNumber;
+                
 				$existingColumnValue = $this->dataFileClass->rows[$j]->values[$columnNumber];
 
 				switch($mapping->ProcessColumns[$k]->fnction){
